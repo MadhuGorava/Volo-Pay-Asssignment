@@ -1,24 +1,25 @@
-import {Link} from 'react-dom'
-import {ListContainer, BtnText} from './styledComponents'
+import './index.css'
 
 const TabItem = props => {
   const {tabDetails, updateActiveTabId, isActive} = props
   const {tabId, displayText} = tabDetails
+
   const onClickTabItem = () => {
     updateActiveTabId(tabId)
   }
 
+  const activeTabClassName = isActive ? 'active-tab-btn' : ''
+
   return (
-    <Link
-      to={`/${displayText}`}
-      style={{textDecoration: 'none', color: '#475569'}}
-    >
-      <ListContainer>
-        <BtnText onClick={onClickTabItem} isActive={isActive}>
-          {displayText}
-        </BtnText>
-      </ListContainer>
-    </Link>
+    <li className="tab-item-container ">
+      <button
+        type="button"
+        className={`tab-btn ${activeTabClassName}`}
+        onClick={onClickTabItem}
+      >
+        {displayText}
+      </button>
+    </li>
   )
 }
 

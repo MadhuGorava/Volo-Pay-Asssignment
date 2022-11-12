@@ -1,6 +1,9 @@
 import {Component} from 'react'
 import {FiVideo} from 'react-icons/fi'
 import {AiOutlinePlus} from 'react-icons/ai'
+import {BsGridFill} from 'react-icons/bs'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import TabItem from '../TabItem'
 import {
   VCardContainer,
   Heading,
@@ -9,6 +12,9 @@ import {
   Text,
   ShadowContainer,
   SubHeading,
+  TabContainer,
+  ListItemsContainer,
+  IconCard,
 } from './styledComponents'
 import './index.css'
 
@@ -26,6 +32,7 @@ class Header extends Component {
   }
 
   render() {
+    const {activeTabId} = this.state
     return (
       <>
         <VCardContainer>
@@ -41,6 +48,22 @@ class Header extends Component {
             <SubHeading>Virtual Cards</SubHeading>
           </ShadowContainer>
         </VCardContainer>
+        <TabContainer>
+          <ListItemsContainer>
+            {tabsList.map(tabDetails => (
+              <TabItem
+                key={tabDetails.tabId}
+                tabDetails={tabDetails}
+                updateActiveTabId={this.updateActiveTabId}
+                isActive={tabDetails.tabId === activeTabId}
+              />
+            ))}
+          </ListItemsContainer>
+          <IconCard>
+            <BsGridFill className="style-icon-menu" />
+            <GiHamburgerMenu className="style-icon-menu" />
+          </IconCard>
+        </TabContainer>
       </>
     )
   }

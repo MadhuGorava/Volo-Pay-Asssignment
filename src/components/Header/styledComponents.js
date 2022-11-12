@@ -58,8 +58,15 @@ export const TabContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 `
+export const IconCard = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+`
 export const ListItemsContainer = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  list-style-type: none;
 `
