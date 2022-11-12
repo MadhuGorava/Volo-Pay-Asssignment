@@ -1,0 +1,8 @@
+.style-icon {
+  font-size: 15px;
+}
+@media screen and (min-width: 768px) {
+  .style-icon {
+    font-size: 22px;
+  }
+}

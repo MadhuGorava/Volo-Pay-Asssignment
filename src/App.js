@@ -1,6 +1,7 @@
+import Header from './components/Header'
 import './App.css'
 
 // Replace your code here
-const App = () => <div>Hello World</div>
+const App = () => <Header />
 
 export default App
