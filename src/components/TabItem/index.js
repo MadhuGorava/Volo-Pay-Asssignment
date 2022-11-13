@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import './index.css'
 
 const TabItem = props => {
@@ -12,13 +13,15 @@ const TabItem = props => {
 
   return (
     <li className="tab-item-container ">
-      <button
-        type="button"
-        className={`tab-btn ${activeTabClassName}`}
-        onClick={onClickTabItem}
-      >
-        {displayText}
-      </button>
+      <Link to={`/${displayText}`}>
+        <button
+          type="button"
+          className={`tab-btn ${activeTabClassName}`}
+          onClick={onClickTabItem}
+        >
+          {displayText}
+        </button>
+      </Link>
     </li>
   )
 }
